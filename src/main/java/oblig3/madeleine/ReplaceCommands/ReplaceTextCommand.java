@@ -51,14 +51,14 @@ public class ReplaceTextCommand implements TextCommand {
   }
 
 
- public String execute(String replacedString){
-    if (replacedString == null) {
+ public String execute(String text){
+    if (text == null) {
       throw new NullPointerException("String cannot be null");
     }
-    if (replacedString.isBlank()) {
+    if (text.isBlank()) {
       throw new IllegalArgumentException("String cannot be blank");
     }
-    return replacedString.replace(getTarget(), getReplacement());
+    return text.replace(getTarget(), getReplacement());
   }
 
 

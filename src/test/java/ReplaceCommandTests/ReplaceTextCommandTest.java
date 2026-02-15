@@ -1,3 +1,5 @@
+package ReplaceCommandTests;
+
 import oblig3.madeleine.ReplaceCommands.ReplaceTextCommand;
 import org.junit.Test;
 

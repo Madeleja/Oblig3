@@ -46,11 +46,18 @@ public class WrapSelectionTextCommand extends WrapTextCommand{
    *
    * Execute method that executes the action
    *
-   * @param text that will be wrap
+   * @param text that will be wrapped
    * @return the wrapped text
    */
+  @Override
   public String execute(String text) {
-    return opening + text + end;
+    if (text == null) {
+      throw new NullPointerException("Text cannot be null");
+    }
+    if (text.isBlank()) {
+      throw new IllegalArgumentException("Text cannot be blank");
+    }
+    return text.replace(getSelection(), getOpening() + getSelection() + getEnd());
   }
 
 

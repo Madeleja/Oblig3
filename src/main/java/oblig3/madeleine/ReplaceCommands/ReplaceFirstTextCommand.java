@@ -24,6 +24,16 @@ public class ReplaceFirstTextCommand extends ReplaceTextCommand {
   public ReplaceFirstTextCommand(String targetString, String replacementString) {
     super(targetString, replacementString);
   }
+  @Override
+  public String execute(String text) {
+    if (text == null) {
+      throw new NullPointerException("String cannot be null");
+    }
+    if (text.isBlank()) {
+      throw new IllegalArgumentException("String cannot be blank");
+    }
+    return text.replaceFirst(getTarget(), getReplacement());
+  }
 
 
 

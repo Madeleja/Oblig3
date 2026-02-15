@@ -1,3 +1,5 @@
+package ReplaceCommandTests;
+
 import oblig3.madeleine.ReplaceCommands.ReplaceFirstTextCommand;
 import org.junit.Test;
 
@@ -30,7 +32,7 @@ public class ReplaceFirstTextCommandTest {
     String executedText = replaceTest.execute(replacedString);
 
     //Assert
-    assertEquals("This is a unit and unit", executedText);
+    assertEquals("This is a unit and test", executedText);
   }
 
   @Test

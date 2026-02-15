@@ -57,7 +57,13 @@ public class WrapTextCommand implements TextCommand {
    * @return the text wrapped
    */
   public String execute(String text) {
-    return opening + text + end;
+    if (text == null) {
+      throw new NullPointerException("String cannot be null");
+    }
+    if (text.isBlank()) {
+      throw new IllegalArgumentException("String cannot be blank");
+    }
+    return getOpening() + text + getEnd();
   }
 
   /**
