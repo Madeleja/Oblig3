@@ -26,7 +26,19 @@ public class ReplaceTextCommand implements TextCommand {
   protected String replacement;
 
   public ReplaceTextCommand(String targetString, String replacementString) {
+    if (targetString == null) {
+      throw new NullPointerException("Target cannot be null");
+    }
+    if (targetString.isBlank()) {
+      throw new IllegalArgumentException("Target cannot be blank");
+    }
     this.target = targetString;
+    if (replacementString == null) {
+      throw new NullPointerException("Replacement cannot be null");
+    }
+    if (replacementString.isBlank()) {
+      throw new IllegalArgumentException("Replacement cannot be blank");
+    }
     this.replacement = replacementString;
   }
 
@@ -38,11 +50,15 @@ public class ReplaceTextCommand implements TextCommand {
     return this.replacement;
   }
 
+
  public String execute(String replacedString){
-    if (replacedString.contains(getReplacement())) {
-      replacement = target;
+    if (replacedString == null) {
+      throw new NullPointerException("String cannot be null");
     }
-    return replacedString;
+    if (replacedString.isBlank()) {
+      throw new IllegalArgumentException("String cannot be blank");
+    }
+    return replacedString.replace(getTarget(), getReplacement());
   }
 
 

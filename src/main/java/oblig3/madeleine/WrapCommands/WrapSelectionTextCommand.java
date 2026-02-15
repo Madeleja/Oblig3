@@ -20,18 +20,46 @@ package oblig3.madeleine.WrapCommands;
  * @version 0.0.1
  */
 public class WrapSelectionTextCommand extends WrapTextCommand{
-  private String selection;
+  private final String selection;
 
 
+  /**
+   *
+   * Constructor that initiates the class
+   *
+   * @param opening to be wrapped around the beginning
+   * @param end to be wrapped around the end
+   * @param selection text that will be wrapped
+   */
   public WrapSelectionTextCommand(String opening, String end, String selection) {
     super(opening, end);
+    if (selection == null) {
+      throw new NullPointerException("Selection cannot be null");
+    }
+    if (selection.isBlank()) {
+      throw new IllegalArgumentException("Selection cannot be blank");
+    }
     this.selection = selection;
   }
 
+  /**
+   *
+   * Execute method that executes the action
+   *
+   * @param text that will be wrap
+   * @return the wrapped text
+   */
   public String execute(String text) {
     return opening + text + end;
   }
 
+
+  /**
+   *
+   * Method that returns the selection set in the constructor
+   *
+   * @return the selection
+   */
   public String getSelection() {
     return this.selection;
   }

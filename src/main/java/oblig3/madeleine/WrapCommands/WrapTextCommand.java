@@ -33,7 +33,19 @@ public class WrapTextCommand implements TextCommand {
    * @param end text that will wrap at the end
    */
   public WrapTextCommand(String opening, String end) {
+    if (opening == null) {
+      throw new NullPointerException("Opening cannot be null");
+    }
+    if (opening.isBlank()) {
+      throw new IllegalArgumentException("Opening cannot be blank");
+    }
     this.opening = opening;
+    if (end == null) {
+      throw new NullPointerException("End cannot be null");
+    }
+    if (end.isBlank()) {
+      throw new IllegalArgumentException("End cannot be blank");
+    }
     this.end = end;
   }
 
