@@ -1,44 +1,44 @@
 package WrapCommandsTests;
 
-import oblig3.madeleine.WrapCommands.WrapSelectionTextCommand;
+import oblig3.madeleine.WrapCommands.WrapLinesTextCommand;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
-public class WrapSelectionTextCommandTest {
+public class WrapLinesTextCommandTest {
 
   @Test
   public void TestConstructorWithNullOpening() {
     assertThrows(NullPointerException.class,() -> {
-      new WrapSelectionTextCommand(null, "unit", "for sure");
+      new WrapLinesTextCommand(null, "unit");
     });
   }
 
   @Test
   public void TestConstructorWithBlankOpening() {
     assertThrows(IllegalArgumentException.class,() -> {
-     new WrapSelectionTextCommand("", "unit", "for sure");
+     new WrapLinesTextCommand("", "unit");
     });
   }
 
   @Test
   public void TestExecuteWithValidInput() {
     //Arrange
-    WrapSelectionTextCommand replaceTest = new WrapSelectionTextCommand("opening ", " end", "for sure");
-    String wrappedString = "This is a test for sure";
+    WrapLinesTextCommand replaceTest = new WrapLinesTextCommand("opening ", " end");
+    String wrappedString = "This is a test" + "\n" + "for sure";
 
     //Act
     String executedText = replaceTest.execute(wrappedString);
 
     //Assert
-    assertEquals("This is a test opening for sure end", executedText);
+    assertEquals("opening This is a test end" + "\n" + "opening for sure end", executedText);
   }
 
 
   @Test
   public void TestExecuteWithNullPointerException() {
-    WrapSelectionTextCommand wrappedTest = new WrapSelectionTextCommand("test", "unit", "for sure");
+    WrapLinesTextCommand wrappedTest = new WrapLinesTextCommand("test", "unit");
     assertThrows(NullPointerException.class,() -> {
       wrappedTest.execute(null);
     });
@@ -46,7 +46,7 @@ public class WrapSelectionTextCommandTest {
 
   @Test
   public void TestExecuteWithIllegalArgumentException() {
-    WrapSelectionTextCommand wrappedTest = new WrapSelectionTextCommand("test", "unit", "for sure");
+    WrapLinesTextCommand wrappedTest = new WrapLinesTextCommand("test", "end");
     assertThrows(IllegalArgumentException.class,() -> {
       wrappedTest.execute("");
     });

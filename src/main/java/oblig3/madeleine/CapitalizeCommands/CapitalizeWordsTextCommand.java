@@ -23,6 +23,11 @@ public class CapitalizeWordsTextCommand extends CapitalizeTextCommand{
    * @return text capitalized
    */
   public String execute(String text) {
-    return text.toUpperCase();
+    String[] splitText = text.split(" ");
+    StringBuilder capitalizedText = new StringBuilder();
+    for (String texts : splitText) {
+      capitalizedText.append(super.execute(texts)).append(" ");
+    }
+    return capitalizedText.toString().trim();
   }
 }

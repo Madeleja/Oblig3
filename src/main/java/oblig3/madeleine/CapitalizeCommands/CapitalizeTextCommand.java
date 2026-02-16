@@ -27,6 +27,12 @@ public class CapitalizeTextCommand implements TextCommand {
    * @return text with capitalized text
    */
   public String execute(String text) {
-    return text;
+    if (text == null) {
+      throw new NullPointerException("Text can't be null");
+    }
+    if (text.isBlank()) {
+      throw new IllegalArgumentException("Text can't be blank");
+    }
+    return text.substring(0,1).toUpperCase() + text.substring(1);
   }
 }

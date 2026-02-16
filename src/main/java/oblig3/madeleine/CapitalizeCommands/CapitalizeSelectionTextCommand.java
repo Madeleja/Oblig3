@@ -35,7 +35,15 @@ public class CapitalizeSelectionTextCommand extends CapitalizeTextCommand{
    * @return text with capitalized selection
    */
   public String execute(String text) {
-    return text;
+    if (text.isBlank()){
+      throw new IllegalArgumentException("Text cannot be blank");
+    }
+    String[] selectedText = getSelection().split(" ");
+    StringBuilder capitalizedText = new StringBuilder();
+    for (String texts : selectedText) {
+      capitalizedText.append(super.execute(texts)).append(" ");
+    }
+    return text.replace(getSelection(), capitalizedText.toString().trim());
   }
 
   /**

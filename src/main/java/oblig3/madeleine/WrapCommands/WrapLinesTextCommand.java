@@ -1,5 +1,7 @@
 package oblig3.madeleine.WrapCommands;
 
+import java.util.Arrays;
+
 /**
  * This class handles the WrapLinesTextCommand
  * which makes it possible to wrap a selection of a text.
@@ -40,6 +42,12 @@ public class WrapLinesTextCommand extends WrapTextCommand{
    * @return wrapped text
    */
   public String execute(String text) {
-    return opening + text + end;
+    String[] splitText = text.split("\\R");
+    String wrappedText = "";
+    for (String texts : splitText) {
+
+      wrappedText = wrappedText + super.execute(texts) + "\n";
+    }
+    return wrappedText.trim();
   }
 }
