@@ -2,11 +2,12 @@ package oblig3.madeleine.CapitalizeCommands;
 
 
 /**
- * This class handles the CapitalizeSelectionTextCommand which makes it possible to capitalize a selection of a text.
+ * This class handles the CapitalizeSelectionTextCommand.
+ * Subclass of CapitalizeText
  * <p>
  *   It includes
  *   <ul>
- *     <li>A method <b>execute</b> which executes the action.</li>
+ *     <li>A method <b>execute</b> which capitalizes all words in a text.</li>
  *   </ul>
  *
  * </p>
@@ -17,10 +18,10 @@ package oblig3.madeleine.CapitalizeCommands;
 public class CapitalizeWordsTextCommand extends CapitalizeTextCommand{
 
   /**
-   * Method that executes the action
+   * Method that capitalizes a selection of a given text
    *
-   * @param text that will be capitalized
-   * @return text capitalized
+   * @param text that contains selection to be capitalized
+   * @return text with capitalized selection
    */
   public String execute(String text) {
     String[] splitText = text.split(" ");

@@ -5,16 +5,17 @@ import oblig3.madeleine.Interfaces.TextCommand;
 
 /**
  * This class handles the WrapTextCommand
- * which makes it possible to replace a selection of a text.
- * It is the superclass of WrapTextCommand and WrapSelectionCommand.
+ * Implements Interface TextCommand
+ * Superclass of WrapLinesTextCommand and WrapSelectionCommand.
  * <p>
  *   It includes
  *   <ul>
  *     <li>A constructor which instantiates the class</li>
- *     <li>A method <b>getTarget</b> which gets the targetString to be replaced</li>
- *     <li>A method <b>getReplacement</b> which
- *     gets the replacementString that will replace the targetString</li>
- *     <li>A method <b>execute</b> that executes the action</li>
+ *     <li>A method <b>getOpening</b> which
+ *  *     gets the opening that will wrap the text at the beginning</li>
+ *     <li>A method <b>getEnd</b> which
+ *     gets the end that will wrap the text at the end</li>
+ *     <li>A method <b>execute</b> that wraps text between opening word and end word</li>
  *   </ul>
  * </p>
  *
@@ -51,10 +52,10 @@ public class WrapTextCommand implements TextCommand {
 
   /**
    *
-   * Method that executes the wrapping.
+   * Method that wraps the given text between the opening and end.
    *
-   * @param text that will be wrap
-   * @return the text wrapped
+   * @param text that will be wrapped
+   * @return the wrapped text
    */
   public String execute(String text) {
     if (text == null) {

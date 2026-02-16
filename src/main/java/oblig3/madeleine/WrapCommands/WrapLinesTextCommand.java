@@ -1,7 +1,5 @@
 package oblig3.madeleine.WrapCommands;
 
-import java.util.Arrays;
-
 /**
  * This class handles the WrapLinesTextCommand
  * which makes it possible to wrap a selection of a text.
@@ -10,10 +8,7 @@ import java.util.Arrays;
  *   It includes
  *   <ul>
  *     <li>A constructor which instantiates the class</li>
- *     <li>A method <b>getTarget</b> which gets the targetString to be replaced</li>
- *     <li>A method <b>getReplacement</b> which
- *     gets the replacementString that will replace the targetString</li>
- *     <li>A method <b>execute</b> that executes the action</li>
+ *     <li>A method <b>execute</b> that  that wraps each line of the text between the opening and the end.n</li>
  *   </ul>
  * </p>
  *
@@ -36,7 +31,8 @@ public class WrapLinesTextCommand extends WrapTextCommand{
 
   /**
    *
-   * Method that executes the wrap
+   * Method that wraps each line of the text between the opening and the end.
+   * Each line is separated into separate strings for each line and wrapped separately.
    *
    * @param text that will be wrapped
    * @return wrapped text

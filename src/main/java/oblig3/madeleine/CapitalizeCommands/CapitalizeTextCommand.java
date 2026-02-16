@@ -2,15 +2,14 @@ package oblig3.madeleine.CapitalizeCommands;
 
 import oblig3.madeleine.Interfaces.TextCommand;
 /**
- * This class handles the CapitalizeText and is the superclass of
- * CapitalizeSelectionTextCommand and CapitalizeWordTextCommand.
+ * <p>This class handles the CapitalizeTextCommand.</p>
+ * <p>Implements Interface TextCommand.</p>
+ * <p>Superclass of CapitalizeSelectionTextCommand and CapitalizeWordTextCommand.</p>
  * <p>
  *   It includes
  *   <ul>
- *     <li>A field <b>Selection</b></li>
  *     <li>A constructor which instantiates the class</li>
- *     <li>A method <b>execute</b> which executes the action.</li>
- *     <li>A method <b>getSelection</b> which returns the selected text</li>
+ *     <li>A method <b>execute</b> which capitalizes the first word in a text.</li>
  *   </ul>
  * </p>
  *
@@ -21,10 +20,10 @@ public class CapitalizeTextCommand implements TextCommand {
 
   /**
    *
-   * Method that capitalizes selected text
+   * Method that capitalizes the first word in a text
    *
    * @param text to be capitalized
-   * @return text with capitalized text
+   * @return capitalized text
    */
   public String execute(String text) {
     if (text == null) {

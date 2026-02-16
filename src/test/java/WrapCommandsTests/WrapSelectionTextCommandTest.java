@@ -100,13 +100,13 @@ public class WrapSelectionTextCommandTest {
   public void TestExecuteWithValidInput() {
     //Arrange
     WrapSelectionTextCommand replaceTest = new WrapSelectionTextCommand("opening ", " end", "for sure");
-    String wrappedString = "This is a test for sure";
+    String wrappedString = "This is a test for sure yeah";
 
     //Act
     String executedText = replaceTest.execute(wrappedString);
 
     //Assert
-    assertEquals("This is a test opening for sure end", executedText);
+    assertEquals("This is a test opening for sure end yeah", executedText);
   }
 
   /**

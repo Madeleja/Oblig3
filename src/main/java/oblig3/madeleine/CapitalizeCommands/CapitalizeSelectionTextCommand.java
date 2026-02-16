@@ -1,12 +1,13 @@
 package oblig3.madeleine.CapitalizeCommands;
 /**
- * This class handles the CapitalizeSelectionTextCommand which makes it possible to capitalize a selection of a text.
+ * This class handles the CapitalizeSelectionTextCommand.
+ * Subclass of CapitalizeText
  * <p>
  *   It includes
  *   <ul>
  *     <li>A field <b>Selection</b></li>
  *     <li>A constructor which instantiates the class</li>
- *     <li>A method <b>execute</b> which executes the action.</li>
+ *     <li>A method <b>execute</b> which capitalizes the selection of a text.</li>
  *     <li>A method <b>getSelection</b> which returns the selected text</li>
  *   </ul>
  *
@@ -29,9 +30,9 @@ public class CapitalizeSelectionTextCommand extends CapitalizeTextCommand{
   }
 
   /**
-   * Method that capitalizes the selected text
+   * Method that capitalizes the selection of the text
    *
-   * @param text to be capitalized
+   * @param text which contains selection to be capitalized
    * @return text with capitalized selection
    */
   public String execute(String text) {

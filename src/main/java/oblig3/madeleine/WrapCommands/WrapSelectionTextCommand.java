@@ -2,16 +2,13 @@ package oblig3.madeleine.WrapCommands;
 
 /**
  * This class handles the WrapSelectionTextCommand
- * which makes it possible to replace a selection of a text.
- * It is the subclass of WrapTextCommand.
+ * Subclass of WrapTextCommand.
  * <p>
  *   It includes
  *   <ul>
  *     <li>A constructor which instantiates the class</li>
- *     <li>A method <b>getTarget</b> which gets the targetString to be replaced</li>
- *     <li>A method <b>getReplacement</b> which
- *     gets the replacementString that will replace the targetString</li>
- *     <li>A method <b>execute</b> that executes the action</li>
+ *     <li>A method <b>execute</b> that wraps a selection of a text between the opening and the end</li>
+ *     <li>A method <b>getSelection</b> that returns the selected part of the text that will be wrapped</li>
  *   </ul>
  *
  * </p>
@@ -44,10 +41,10 @@ public class WrapSelectionTextCommand extends WrapTextCommand{
 
   /**
    *
-   * Execute method that executes the action
+   * Method that wraps a selection of the text provided between the opening and the end.
    *
    * @param text that will be wrapped
-   * @return the wrapped text
+   * @return the text with the selection wrapped
    */
   @Override
   public String execute(String text) {
