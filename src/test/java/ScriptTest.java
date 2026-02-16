@@ -10,8 +10,24 @@ import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
-public class ScriptTest {
 
+/**
+ * Test class for the Script class.
+ * Contains methods:
+ * <ol>
+ *   <li><b>TestConstructorWithNullOpening</b> which is expected to throw a NullPointerException</li>
+ *   <li><b>TestExecuteWithValidInput</b> which is expected to show that the <b>execute</b> method works as intended</li>
+ * </ol>
+ *
+ * @author Madeleine Jacobsen
+ * @version 0.0.1
+ *
+ */
+public class ScriptTest {
+  /**
+   * Test expected to throw a
+   * NullPointerException when a parameter in the constructor is set to null
+   */
   @Test
   public void TestConstructorWithNullOpening() {
     assertThrows(NullPointerException.class, () -> {
@@ -19,7 +35,9 @@ public class ScriptTest {
     });
   }
 
-
+  /**
+   * Test expected to show that the <b>execute</b> method works as intended.
+   */
   @Test
   public void TestExecuteWithValidInput() {
     //Arrange
